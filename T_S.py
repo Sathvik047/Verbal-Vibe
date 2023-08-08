@@ -31,3 +31,18 @@ def select_voice(voices):
 
 def generate_speech(api_key, text, voice_id, output_filename):
     conn = http.client.HTTPSConnection("api.elevenlabs.io")
+
+    headers = {
+        "accept": "audio/mpeg",
+        "Content-Type": "application/json",
+        "xi-api-key": api_key
+    }
+
+    payload = {
+        "text" : text,
+        "model_id": "eleven_monolingual_v1",
+        "voice_settings": {
+            "stability": 0,
+            "similarity_boost": 0
+        }
+    }
