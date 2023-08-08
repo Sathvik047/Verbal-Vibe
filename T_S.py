@@ -28,3 +28,6 @@ def select_voice(voices):
         print(f"{index+1}. {voice['name']}")
     voice_index = int(input("Enter the number corresponding to the desired voice: ")) - 1
     return voices[voice_index]['voice_id']
+
+def generate_speech(api_key, text, voice_id, output_filename):
+    conn = http.client.HTTPSConnection("api.elevenlabs.io")
