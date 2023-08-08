@@ -13,3 +13,11 @@ def load_api_key():
         return api_key
     except FileNotFoundError:
         return None
+    
+   
+def get_text():
+    return input("Enter the text you want to convert to speech: ")
+
+
+def get_output_filename():
+    return input("Enter the desired output file name (without extension): ")
