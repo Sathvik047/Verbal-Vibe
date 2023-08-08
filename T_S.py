@@ -21,3 +21,10 @@ def get_text():
 
 def get_output_filename():
     return input("Enter the desired output file name (without extension): ")
+
+def select_voice(voices):
+    print("Available voices:")
+    for index, voice in enumerate(voices):
+        print(f"{index+1}. {voice['name']}")
+    voice_index = int(input("Enter the number corresponding to the desired voice: ")) - 1
+    return voices[voice_index]['voice_id']
