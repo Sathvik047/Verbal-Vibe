@@ -46,3 +46,7 @@ def generate_speech(api_key, text, voice_id, output_filename):
             "similarity_boost": 0
         }
     }
+
+    conn.request("POST", f"/v1/text-to-speech/{voice_id}?optimize_streaming_latency=0", headers=headers, body=json.dumps(payload))
+
+    response = conn.getresponse()
